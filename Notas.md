@@ -4,6 +4,8 @@
 * Git config --global user.name "Jonath"
 * Git config --global user.email Jonathangc.dev@gmail.com
 * Git config --global init.defaultBranch main
+* Git config --global pull.ff only
+* Git config --global pull.rebase true
 * Git config --global alias.s "status --short"
 * Git config --global alias.lg "log --oneline --decorate --all --graph --abbrev-commit"
 
@@ -72,5 +74,25 @@
         * Squash (s): Junta el commit seleccionado con el anterior inmediato.
         * Reword (r): Cambia el mensaje de nuestro commit.
         * Edit: Sirve para separar commits.
-
+        * Git rebase --continue: Al resolver los problemas, se utiliza este codigo para finalizar el rabese.
 NOTAS: Sirve para reiniciar el punto inicial de nuestra rama. Se recomienda el uso si los los cambios a realizar no han sido subidos a github, ya que generara problemas a los demas.
+
+# Aprendiendo GitHub
+## Git remote
+* Git remote add origin 'https://github.com/Jonath-dev/Curso-Git.git': Creamos la direccion remota de nuestro repositorio.
+    * add: Agrega un nuevo remote. 
+    * 'origin' nombre estandar del remoto.
+    * 'https://github.com/Jonath-dev/Curso-Git.git': Direccion del remote, en este caso a nuestro repositorio llamado Curso-Git.git.
+* Git remote -v: Vista de nuestros repositorios remotos.
+
+## Push and Pull
+* Git push -u origin master:Envia nuestros cambios al repositorio remoto.
+    * origin: Nombre del repositorio que queremos subir.
+    * master: Rama que deseamos enviar.
+* Git push --tag: Envia los tags al origen remoto.
+* Git pull: Trae los cambios del repositorio remoto a nuestro repositorio local. 
+    * Git pull origin main (En caso de no tener predefinido el origen -u).
+    * Git config pull.rebase true: En caso de no ser posible un fastforward, podemos hacer un rebase en el pull con este codigo.
+
+## Clone
+* Git clone 'https://github.com/Jonath-dev/Curso-Git.git'/: Clona es repositorio remoto al directorio donde nos encontremos, al clonar un repositorio es posible ver los commits anteriores y viajar en el tiempo como si fuera nuestro repositorio local.
