@@ -23,6 +23,7 @@
 * Git checkout file: Restablece el archivo conforme el ultimo commit.
     * Git checkout --.: Reconstruye el proyecto a como estaba en el ultimo commit.
     * Git chechout nombre-rama: Cambia a la rama ingresada.
+    * Git cheackout HASH file: Restablece el archivo al punto en el tiempo ingresado.
 * Git branch: Indica la rama actual.
     Git branch 'nueva-rama': Crea una nueva rama.
 * Git branch -m master main: Renombra una rama en este caso de 'master' a 'main'.
@@ -84,15 +85,24 @@ NOTAS: Sirve para reiniciar el punto inicial de nuestra rama. Se recomienda el u
     * 'origin' nombre estandar del remoto.
     * 'https://github.com/Jonath-dev/Curso-Git.git': Direccion del remote, en este caso a nuestro repositorio llamado Curso-Git.git.
 * Git remote -v: Vista de nuestros repositorios remotos.
+* Git remote prune origin: limpia las ramas remotas que ya han sido eliminadas. 
 
 ## Push and Pull
 * Git push -u origin master:Envia nuestros cambios al repositorio remoto.
     * origin: Nombre del repositorio que queremos subir.
     * master: Rama que deseamos enviar.
 * Git push --tag: Envia los tags al origen remoto.
+* git push --set-upstream origin rama-nombre: Sube una rama secundaria a nuestro repositorio.
+* Git push origin :rama-nombre: Elimina una rama en github desde linea de comando.
 * Git pull: Trae los cambios del repositorio remoto a nuestro repositorio local. 
     * Git pull origin main (En caso de no tener predefinido el origen -u).
     * Git config pull.rebase true: En caso de no ser posible un fastforward, podemos hacer un rebase en el pull con este codigo.
 
 ## Clone
-* Git clone 'https://github.com/Jonath-dev/Curso-Git.git'/: Clona es repositorio remoto al directorio donde nos encontremos, al clonar un repositorio es posible ver los commits anteriores y viajar en el tiempo como si fuera nuestro repositorio local.
+* Git clone 'https://github.com/Jonath-dev/Curso-Git.git': Clona es repositorio remoto al directorio donde nos encontremos, al clonar un repositorio es posible ver los commits anteriores y viajar en el tiempo como si fuera nuestro repositorio local.
+
+## Fetch
+* Git fetch: Trae los commits del repositorio remoto al repositorio local pero sin hacer un merge con muestra rama principal.
+
+## Forks 
+Los forks son una copia de un repositorio ajeno, al que tendremos acceso como si fuera nuestro, con un git clone podemos enlazarlo con un repositorio local.
